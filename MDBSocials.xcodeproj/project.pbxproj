@@ -19,6 +19,8 @@
 		BD36D1651C90F6450095C2FF /* FeedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD36D1641C90F6450095C2FF /* FeedCollectionView.swift */; };
 		BD36D1671C90F6BA0095C2FF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD36D1661C90F6BA0095C2FF /* DetailViewController.swift */; };
 		BD36D1691C90F74A0095C2FF /* NewSocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD36D1681C90F74A0095C2FF /* NewSocialViewController.swift */; };
+		BD9D0A4C1C936581003D5F1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D0A4B1C936581003D5F1A /* LoginViewController.swift */; };
+		BD9D0A4E1C936B86003D5F1A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D0A4D1C936B86003D5F1A /* SignupViewController.swift */; };
 		BDF81D4B1C9108DD00E6F84E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF81D4A1C9108DD00E6F84E /* AudioToolbox.framework */; };
 		BDF81D4D1C9108E700E6F84E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF81D4C1C9108E700E6F84E /* CFNetwork.framework */; };
 		BDF81D4F1C9108ED00E6F84E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF81D4E1C9108ED00E6F84E /* CoreGraphics.framework */; };
@@ -75,6 +77,8 @@
 		BD36D1641C90F6450095C2FF /* FeedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedCollectionView.swift; path = ../FeedCollectionView.swift; sourceTree = "<group>"; };
 		BD36D1661C90F6BA0095C2FF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BD36D1681C90F74A0095C2FF /* NewSocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSocialViewController.swift; sourceTree = "<group>"; };
+		BD9D0A4B1C936581003D5F1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		BD9D0A4D1C936B86003D5F1A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		BDF81D4A1C9108DD00E6F84E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BDF81D4C1C9108E700E6F84E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BDF81D4E1C9108ED00E6F84E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -182,6 +186,8 @@
 				BDF81D6F1C910A4900E6F84E /* MDBSocials-Bridging-Header.h */,
 				BD36D1391C90F0A30095C2FF /* Assets.xcassets */,
 				BD36D1331C90F0A30095C2FF /* Main.storyboard */,
+				BD9D0A4B1C936581003D5F1A /* LoginViewController.swift */,
+				BD9D0A4D1C936B86003D5F1A /* SignupViewController.swift */,
 				BD36D1311C90F0A30095C2FF /* ViewController.swift */,
 				BD36D1641C90F6450095C2FF /* FeedCollectionView.swift */,
 				BD36D1681C90F74A0095C2FF /* NewSocialViewController.swift */,
@@ -356,10 +362,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9D0A4E1C936B86003D5F1A /* SignupViewController.swift in Sources */,
 				BD36D1631C90F4290095C2FF /* CollectionViewCell.swift in Sources */,
 				BD36D1651C90F6450095C2FF /* FeedCollectionView.swift in Sources */,
 				BD36D1321C90F0A30095C2FF /* ViewController.swift in Sources */,
 				BD36D1691C90F74A0095C2FF /* NewSocialViewController.swift in Sources */,
+				BD9D0A4C1C936581003D5F1A /* LoginViewController.swift in Sources */,
 				BD36D1671C90F6BA0095C2FF /* DetailViewController.swift in Sources */,
 				BD36D1301C90F0A30095C2FF /* AppDelegate.swift in Sources */,
 				BD36D1381C90F0A30095C2FF /* MDBSocials.xcdatamodeld in Sources */,
