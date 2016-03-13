@@ -8,24 +8,29 @@
 
 import UIKit
 
-var eventnames = ["bowling", "dinner", "ball"]
-var dates = ["Monday", "Tuesday", "Wednesday"]
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var feedCollectionView: FeedCollectionView!
+    
+    var events:NSArray = NSArray()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+        
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         feedCollectionView.delegate = self
         feedCollectionView.dataSource = self
+        
+        parseQuery()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -33,31 +38,47 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return eventnames.count
+        return events.count
+    }
+    
+    func parseQuery() {
+        let query = PFQuery(className:"Events")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                self.events = objects!
+                self.feedCollectionView?.reloadData()
+            }
+        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        
         let cell = feedCollectionView.dequeueReusableCellWithReuseIdentifier("eventcell", forIndexPath: indexPath) as! CollectionViewCell
+        
+        print("getting here")
 
-        cell.namelabel.text = eventnames[indexPath.row]
-        cell.datelabel.text = dates[indexPath.row]
+        cell.namelabel.text = events[indexPath.row]["eventName"] as? String
+        cell.datelabel.text = events[indexPath.row]["eventDate"] as? String
         
         return cell
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if (segue.identifier) == "toDetails" {
             let vc = segue.destinationViewController as! DetailViewController
             let row = (sender as! NSIndexPath).item
-            vc.name = eventnames[row]
-            vc.date = dates[row]
-    
-    
+            vc.currentObject = events[row] as? PFObject
         }
     }
+    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("toDetails", sender: indexPath)
     }
+
 }
 
